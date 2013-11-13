@@ -27,3 +27,8 @@
        :width normal 
        :foundry "apple" 
        :family "Source Code Pro")))))
+
+(require 'color-theme)
+(color-theme-initialize)
+(load-file "~/.emacs.d/site-lisp/themes/color-theme-railscasts.el")
+(color-theme-railscasts)
