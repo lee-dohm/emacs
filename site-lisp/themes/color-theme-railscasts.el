@@ -68,7 +68,7 @@
      (bold-italic ((t (:italic t :bold t))))
      (fringe ((t (:background "#232323"))))
      (font-lock-builtin-face ((t (:foreground "#D0D0FF"))))
-     (font-lock-comment-face ((t (:foreground "#BC9458" :italic t))))
+     (font-lock-comment-face ((t (:foreground "#BC9458"))))
      (font-lock-constant-face ((t (:foreground "#6D9CBE"))))
      (font-lock-doc-string-face ((t (:foreground "#A5C261"))))
      (font-lock-function-name-face ((t (:foreground "#FFC66D"))))
