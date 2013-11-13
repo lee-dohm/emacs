@@ -26,7 +26,7 @@
        :height 130 
        :width normal 
        :foundry "apple" 
-       :family "Source Code Pro")))))
+       :family "Source Code Pro Light")))))
 
 (require 'color-theme)
 (color-theme-initialize)
