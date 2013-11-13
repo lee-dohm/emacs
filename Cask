@@ -3,5 +3,6 @@
 (depends-on "auto-complete")
 (depends-on "color-theme")
 (depends-on "enh-ruby-mode")
+(depends-on "grizzl")
 (depends-on "pallet")
 (depends-on "projectile")
