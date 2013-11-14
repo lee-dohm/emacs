@@ -1,6 +1,4 @@
 
-(x-focus-frame nil)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -8,6 +6,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Defaults to using Source Code Pro as the text font
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,11 +23,12 @@
        :overline nil 
        :underline nil 
        :slant normal 
-       :weight normal 
+       :weight normal
        :height 130 
        :width normal 
        :foundry "apple" 
-       :family "Source Code Pro Light")))))
+       :family "Source Code Pro")))))
+
 
 ;; Initial window size
 (add-to-list 'default-frame-alist '(height . 50))
@@ -47,7 +47,7 @@
 (if (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
 
-;; Modeline
+;; Mode line
 (setq column-number-mode t)
 (setq size-indication-mode t)
 
@@ -58,3 +58,7 @@
 ;; Spell Checking
 (require 'flyspell-lazy)
 (flyspell-lazy-mode 1)
+
+;; Max column width guide
+(require 'column-marker)
+

@@ -56,17 +56,17 @@
   (interactive)
   (color-theme-install
    '(color-theme-railscasts
-     ((background-color . "#232323")
-      (border-color . "#232323")
+     ((background-color . "#282828")
+      (border-color . "#282828")
       (background-mode . dark)
       (mouse-color . "sienna1") ; avallark
       (cursor-color . "#5A647E") ;avallark
       (foreground-color . "#E6E1DC"))
-     (default ((t (:background "#232323" :foreground "#F8F8F8")))) ;avallark
+     (default ((t (:background "#282828" :foreground "#F8F8F8")))) ;avallark
      (blue ((t (:foreground "blue")))) ; avallark
      (bold ((t (:bold t))))
      (bold-italic ((t (:italic t :bold t))))
-     (fringe ((t (:background "#232323"))))
+     (fringe ((t (:background "#282828"))))
      (font-lock-builtin-face ((t (:foreground "#D0D0FF"))))
      (font-lock-comment-face ((t (:foreground "#BC9458"))))
      (font-lock-constant-face ((t (:foreground "#6D9CBE"))))
