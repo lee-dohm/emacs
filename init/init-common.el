@@ -34,6 +34,9 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+;; Key mappings
+(global-set-key (kbd "s-n") 'make-frame-command)
+
 ;; Disable the bell when scrolling
 (defun my-bell-function ()
   (unless (memq this-command
