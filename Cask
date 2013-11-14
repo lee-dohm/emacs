@@ -7,6 +7,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "git-commit-mode")
 (depends-on "grizzl")
+(depends-on "haml-mode")
 (depends-on "markdown-mode")
 (depends-on "pallet")
 (depends-on "projectile")
