@@ -2,11 +2,14 @@
 (cask-initialize)
 (require 'pallet)
 
-(add-to-list 'load-path "~/.emacs.d/custom")
+(add-to-list 'load-path "~/.emacs.d/init")
 
-(load "00common-setup.el")
-(load "01projectile.el")
-(load "02ruby.el")
-(load "03shell.el")
-(load "04flyspell.el")
-(load "05emacs-lisp.el")
+;; Load settings common to all modes
+(load "init-common.el")
+
+;; Load settings specific to certain modes
+(load "init-emacs-lisp.el")
+(load "init-flyspell.el")
+(load "init-projectile.el")
+(load "init-ruby.el")
+(load "init-shell.el")
