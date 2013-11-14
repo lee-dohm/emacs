@@ -69,10 +69,6 @@
 (setq-default indent-tabs-mode nil)
 (setq require-final-newline t)
 
-;; Spell Checking
-(require 'flyspell-lazy)
-(flyspell-lazy-mode 1)
-
-;; Max column width guide
+;; Max column width highlight
 (require 'column-marker)
 
