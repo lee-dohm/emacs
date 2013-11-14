@@ -1,4 +1,6 @@
 (source "melpa" "http://melpa.milkbox.net/packages/")
+(source "gnu" "http://elpa.gnu.org/packages/")
+(source "marmalade" "http://marmalade-repo.org/packages/")
 
 (depends-on "ag")
 (depends-on "auto-complete")
@@ -8,9 +10,11 @@
 (depends-on "git-commit-mode")
 (depends-on "grizzl")
 (depends-on "haml-mode")
+(depends-on "less-css-mode")
 (depends-on "markdown-mode")
 (depends-on "pallet")
 (depends-on "projectile")
+(depends-on "rainbow-mode")
 (depends-on "yaml-mode")
 (depends-on "yard-mode")
 (depends-on "yasnippet")

@@ -29,6 +29,20 @@
        :foundry "apple" 
        :family "Source Code Pro")))))
 
+;; Add other ELPA repositories
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+;; Disable the bell when scrolling
+(defun my-bell-function ()
+  (unless (memq this-command
+    	'(isearch-abort abort-recursive-edit exit-minibuffer
+              keyboard-quit mwheel-scroll down up next-line previous-line
+              backward-char forward-char))
+    (ding)))
+
+(setq ring-bell-function 'my-bell-function)
 
 ;; Initial window size
 (add-to-list 'default-frame-alist '(height . 50))
