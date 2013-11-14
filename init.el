@@ -2,7 +2,9 @@
 (cask-initialize)
 (require 'pallet)
 
+;; Load paths
 (add-to-list 'load-path "~/.emacs.d/init")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Load settings common to all modes
 (load "init-common.el")
