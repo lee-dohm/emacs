@@ -28,7 +28,31 @@
        :foundry "apple" 
        :family "Source Code Pro Light")))))
 
+;; Initial window size
+(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(width . 132))
+
+;; Specify the color theme to use
 (require 'color-theme)
 (color-theme-initialize)
 (load-file "~/.emacs.d/site-lisp/themes/color-theme-railscasts.el")
 (color-theme-railscasts)
+
+;; GUI Settings
+(setq inhibit-startup-screen t)
+(tool-bar-mode 0)
+
+(if (not indicate-empty-lines)
+  (toggle-indicate-empty-lines))
+
+;; Modeline
+(setq column-number-mode t)
+(setq size-indication-mode t)
+
+;; Editing
+(setq-default indent-tabs-mode nil)
+(setq require-final-newline t)
+
+;; Spell Checking
+(require 'flyspell-lazy)
+(flyspell-lazy-mode 1)

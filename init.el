@@ -7,3 +7,5 @@
 (load "00common-setup.el")
 (load "01projectile.el")
 (load "02ruby.el")
+(load "03shell.el")
+(load "04flyspell.el")
