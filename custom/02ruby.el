@@ -5,4 +5,4 @@
              '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . enh-ruby-mode))
 
 (add-hook 'enh-ruby-mode-hook 'yard-mode)
-(add-hook 'foo-mode-hook (lambda () (interactive) (column-marker-1 100)))
+(add-hook 'enh-ruby-mode-hook (lambda () (interactive) (column-marker-1 100)))

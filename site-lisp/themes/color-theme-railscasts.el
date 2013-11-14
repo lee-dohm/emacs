@@ -49,6 +49,9 @@
 
 ;;; Code:
 
+(defun erm-lighten-color (name)
+  (color-darken-name (face-attribute name :foreground) -20))
+
 (eval-when-compile
   (require 'color-theme))
 
@@ -99,8 +102,10 @@
      (flymake-warnline ((t (:background "LightSteelBlue" :foreground
                                         "black"))))
      (underline ((t (:underline t))))
-     (minibuffer-prompt ((t (:bold t :foreground "#FF6600")))))))
-
+     (minibuffer-prompt ((t (:bold t :foreground "#FF6600"))))
+     (enh-ruby-op-face ((t (:foreground "#CC7833"))))
+     (enh-ruby-string-delimiter-face ((t (:foreground "#A5C261"))))
+     )))
 
 (color-theme-railscasts)
 

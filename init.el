@@ -9,3 +9,4 @@
 (load "02ruby.el")
 (load "03shell.el")
 (load "04flyspell.el")
+(load "05emacs-lisp.el")
