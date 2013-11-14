@@ -1,4 +1,8 @@
 
+;; Configure spell checking to use aspell
+(setq ispell-program-name "/usr/local/bin/aspell")
+(setq ispell-list-command "list")
+
 ;; Turns on spell checking in text mode
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
