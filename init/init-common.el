@@ -36,6 +36,8 @@
 
 ;; Key mappings
 (global-set-key (kbd "s-n") 'make-frame-command)
+(global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "M-s-ß") 'save-some-buffers)
 
 ;; Disable the bell when scrolling
 (defun my-bell-function ()
