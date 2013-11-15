@@ -29,6 +29,8 @@
        :foundry "apple" 
        :family "Source Code Pro")))))
 
+(global-visual-line-mode 1)
+
 ;; Add other ELPA repositories
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -38,6 +40,11 @@
 (global-set-key (kbd "s-n") 'make-frame-command)
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "M-s-ß") 'save-some-buffers)
+
+(defun save-all-the-buffers ()
+  (save-some-buffers t))
+
+(define-key (current-global-map) [remap save-some-buffers] 'save-all-the-buffers)
 
 ;; Disable the bell when scrolling
 (defun my-bell-function ()

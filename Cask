@@ -4,6 +4,7 @@
 
 (depends-on "ag")
 (depends-on "auto-complete")
+(depends-on "coffee-mode")
 (depends-on "color-theme")
 (depends-on "column-marker")
 (depends-on "enh-ruby-mode")
