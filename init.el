@@ -15,3 +15,4 @@
 (load "init-projectile.el")
 (load "init-ruby.el")
 (load "init-shell.el")
+(load "init-smartparens.el")

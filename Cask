@@ -15,6 +15,7 @@
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
+(depends-on "smartparens")
 (depends-on "yaml-mode")
 (depends-on "yard-mode")
 (depends-on "yasnippet")
