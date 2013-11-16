@@ -1,3 +1,6 @@
+;;
+;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
+;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -31,6 +34,12 @@
 
 ;; Set standard line wrapping behavior
 (global-visual-line-mode 1)
+
+;; Store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;; Add other ELPA repositories
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -89,3 +98,26 @@
 
 ;; Max column width highlight
 (require 'column-marker)
+
+;; Smart open line
+(defun smart-open-line ()
+  "Insert an empty line after the current line.
+   Position the cursor at its beginning, according to the current mode."
+
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(global-set-key [(shift return)] 'smart-open-line)
+
+(defun smart-open-line-above ()
+  "Insert an empty line above the current line.
+   Position the cursor at it's beginning, according to the current mode."
+
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(global-set-key [(control shift return)] 'smart-open-line-above)
