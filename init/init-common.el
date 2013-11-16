@@ -29,6 +29,7 @@
        :foundry "apple" 
        :family "Source Code Pro")))))
 
+;; Set standard line wrapping behavior
 (global-visual-line-mode 1)
 
 ;; Add other ELPA repositories
@@ -56,7 +57,7 @@
 
 (setq ring-bell-function 'my-bell-function)
 
-;; Initial window size
+;; Initial window size and position
 (add-to-list 'default-frame-alist '(height . 50))
 (add-to-list 'default-frame-alist '(width . 132))
 
