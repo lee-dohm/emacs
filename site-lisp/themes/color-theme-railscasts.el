@@ -105,6 +105,8 @@
      (minibuffer-prompt ((t (:bold t :foreground "#FF6600"))))
      (enh-ruby-op-face ((t (:foreground "#CC7833"))))
      (enh-ruby-string-delimiter-face ((t (:foreground "#A5C261"))))
+     (whitespace-space ((t (:background "#282828" :foreground "gray30"))))
+     (whitespace-tab ((t (:background "#ff6600" :foreground "black"))))
      )))
 
 (color-theme-railscasts)
