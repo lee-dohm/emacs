@@ -8,3 +8,6 @@
 
 ;; Key mapping for toggling whitespace-mode
 (global-set-key (kbd "C-c w") 'whitespace-mode)
+
+;; Convert tabs to spaces before saving any file
+(add-hook 'before-save-hook (lambda () (untabify (point-min) (point-max))))

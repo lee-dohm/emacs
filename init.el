@@ -11,6 +11,7 @@
 (load "init-common.el")
 
 ;; Load settings specific to certain modes
+(load "init-compile.el")
 (load "init-emacs-lisp.el")
 (load "init-flyspell.el")
 (load "init-projectile.el")

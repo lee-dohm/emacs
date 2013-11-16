@@ -13,20 +13,20 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default (
-   (t (:inherit nil 
-       :stipple nil 
-       :background "White" 
-       :foreground "Black" 
-       :inverse-video nil 
-       :box nil 
-       :strike-through nil 
-       :overline nil 
-       :underline nil 
-       :slant normal 
+   (t (:inherit nil
+       :stipple nil
+       :background "White"
+       :foreground "Black"
+       :inverse-video nil
+       :box nil
+       :strike-through nil
+       :overline nil
+       :underline nil
+       :slant normal
        :weight normal
-       :height 130 
-       :width normal 
-       :foundry "apple" 
+       :height 130
+       :width normal
+       :foundry "apple"
        :family "Source Code Pro")))))
 
 ;; Set standard line wrapping behavior
@@ -47,10 +47,15 @@
 
 (define-key (current-global-map) [remap save-some-buffers] 'save-all-the-buffers)
 
+;; make some use of the Super key
+(define-key global-map (kbd "s-l") 'goto-line)
+(define-key global-map (kbd "s-m") 'magit-status)
+(define-key global-map (kbd "s-w") 'delete-frame)
+
 ;; Disable the bell when scrolling
 (defun my-bell-function ()
   (unless (memq this-command
-    	'(isearch-abort abort-recursive-edit exit-minibuffer
+        '(isearch-abort abort-recursive-edit exit-minibuffer
               keyboard-quit mwheel-scroll down up next-line previous-line
               backward-char forward-char))
     (ding)))
@@ -84,4 +89,3 @@
 
 ;; Max column width highlight
 (require 'column-marker)
-
