@@ -1,6 +1,5 @@
-(source "melpa" "http://melpa.milkbox.net/packages/")
-(source "gnu" "http://elpa.gnu.org/packages/")
-(source "marmalade" "http://marmalade-repo.org/packages/")
+(source gnu)
+(source melpa)
 
 (depends-on "ag")
 (depends-on "auto-complete")
@@ -8,6 +7,7 @@
 (depends-on "color-theme")
 (depends-on "column-marker")
 (depends-on "enh-ruby-mode")
+(depends-on "fill-column-indicator")
 (depends-on "git-commit-mode")
 (depends-on "grizzl")
 (depends-on "haml-mode")

@@ -2,6 +2,29 @@
 ;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
 ;;
 
+(require 'fill-column-indicator)
+(require 'whitespace)
+(setq whitespace-line-column 100)
+(setq-default fci-rule-column 100)
+(setq whitespace-style '(face tabs
+                              spaces
+                              trailing
+                              lines-tail
+                              space-before-tab
+                              newline
+                              indentation
+                              empty
+                              space-after-tab
+                              space-mark
+                              tab-mark))
+
+(defun enable-whitespace-mode ()
+  (whitespace-mode 1))
+
+(add-hook 'prog-mode-hook 'fci-mode)
+(add-hook 'prog-mode-hook 'enable-whitespace-mode)
+(add-hook 'enh-ruby-mode-hook 'enable-whitespace-mode)
+
 ;; Make trailing whitespace visible and delete it before saving
 (setq-default show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
