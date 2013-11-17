@@ -23,7 +23,6 @@
 
 (add-hook 'prog-mode-hook 'fci-mode)
 (add-hook 'prog-mode-hook 'enable-whitespace-mode)
-(add-hook 'enh-ruby-mode-hook 'enable-whitespace-mode)
 
 (defun auto-fill-comments ()
   (setq fill-column 72)

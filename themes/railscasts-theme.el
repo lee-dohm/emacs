@@ -47,8 +47,8 @@
  '(show-paren-mismatch-face ((t (:foreground "#444444" :background "#990000"))))
  '(lazy-highlight ((t (:background "#cc7833"))))
 
- '(enh-ruby-op-face ((t (:foreground "#CC7833"))))
- '(enh-ruby-string-delimiter-face ((t (:foreground "#A5C261"))))
+ ;; '(enh-ruby-op-face ((t (:foreground "#CC7833"))))
+ ;; '(enh-ruby-string-delimiter-face ((t (:foreground "#A5C261"))))
 
  '(whitespace-space ((t (:background "#282828" :foreground "gray30"))))
  '(whitespace-tab ((t (:background "#ff6600" :foreground "black"))))

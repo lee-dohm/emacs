@@ -5,7 +5,6 @@
 (depends-on "auto-complete")
 (depends-on "coffee-mode")
 (depends-on "column-marker")
-(depends-on "enh-ruby-mode")
 (depends-on "fill-column-indicator")
 (depends-on "git-commit-mode")
 (depends-on "grizzl")
