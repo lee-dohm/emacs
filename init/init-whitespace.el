@@ -19,17 +19,24 @@
                               tab-mark))
 
 (defun enable-whitespace-mode ()
+  "Turns on whitespace mode."
   (whitespace-mode 1))
 
-(add-hook 'prog-mode-hook 'fci-mode)
-(add-hook 'prog-mode-hook 'enable-whitespace-mode)
-
 (defun auto-fill-comments ()
+  "Auto-fills comments only."
   (setq fill-column 72)
   (set (make-local-variable 'comment-auto-fill-only-comments) t)
   (auto-fill-mode t))
 
-(add-hook 'prog-mode-hook 'auto-fill-comments)
+(defun whitespace-prog-mode-hook ()
+  "Configures whitespace features for prog-mode and other related major modes."
+  (fci-mode)
+  (enable-whitespace-mode)
+  (auto-fill-comments)
+  (lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
+
+(add-hook 'prog-mode-hook 'whitespace-prog-mode-hook)
+(add-hook 'yaml-mode-hook 'whitespace-prog-mode-hook)
 
 ;; Make trailing whitespace visible and delete it before saving
 (setq-default show-trailing-whitespace t)
