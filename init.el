@@ -10,7 +10,8 @@
 ;; Load settings common to all modes
 (load "init-common.el")
 
-;; Load settings specific to certain modes
+;; Load settings specific to certain modes or features
+(load "init-abbrevs.el")
 (load "init-compile.el")
 (load "init-emacs-lisp.el")
 (load "init-flyspell.el")
