@@ -2,6 +2,7 @@
 ;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
 ;;
 
+;; Required by some utilities because fish shell doesn't play well with Emacs
 (setq-default explicit-shell-file-name "/bin/bash")
 (setq-default shell-file-name "/bin/bash")
 

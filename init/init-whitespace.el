@@ -25,6 +25,13 @@
 (add-hook 'prog-mode-hook 'enable-whitespace-mode)
 (add-hook 'enh-ruby-mode-hook 'enable-whitespace-mode)
 
+(defun auto-fill-comments ()
+  (setq fill-column 72)
+  (set (make-local-variable 'comment-auto-fill-only-comments) t)
+  (auto-fill-mode t))
+
+(add-hook 'prog-mode-hook 'auto-fill-comments)
+
 ;; Make trailing whitespace visible and delete it before saving
 (setq-default show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
