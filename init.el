@@ -21,6 +21,7 @@
 (load "init-smartparens.el")
 (load "init-theme.el")
 (load "init-whitespace.el")
+(load "init-yasnippet.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
