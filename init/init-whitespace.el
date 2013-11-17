@@ -32,11 +32,12 @@
   "Configures whitespace features for prog-mode and other related major modes."
   (fci-mode)
   (enable-whitespace-mode)
-  (auto-fill-comments)
-  (lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
+  (auto-fill-comments))
 
 (add-hook 'prog-mode-hook 'whitespace-prog-mode-hook)
 (add-hook 'yaml-mode-hook 'whitespace-prog-mode-hook)
+
+(electric-indent-mode 1)
 
 ;; Make trailing whitespace visible and delete it before saving
 (setq-default show-trailing-whitespace t)
