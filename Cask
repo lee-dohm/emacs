@@ -1,10 +1,9 @@
-(source gnu)
-(source melpa)
+(source "gnu" "http://elpa.gnu.org/packages/")
+(source "melpa" "http://melpa.milkbox.net/packages/")
 
 (depends-on "ag")
 (depends-on "auto-complete")
 (depends-on "coffee-mode")
-(depends-on "color-theme")
 (depends-on "column-marker")
 (depends-on "enh-ruby-mode")
 (depends-on "fill-column-indicator")
@@ -21,3 +20,4 @@
 (depends-on "yaml-mode")
 (depends-on "yard-mode")
 (depends-on "yasnippet")
+(depends-on "zenburn-theme")
