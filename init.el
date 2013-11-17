@@ -15,12 +15,12 @@
 (load "init-compile.el")
 (load "init-emacs-lisp.el")
 (load "init-flyspell.el")
+(load "init-formatting.el")
 (load "init-projectile.el")
 (load "init-ruby.el")
 (load "init-shell.el")
 (load "init-smartparens.el")
 (load "init-theme.el")
-(load "init-whitespace.el")
 (load "init-yasnippet.el")
 
 (custom-set-variables

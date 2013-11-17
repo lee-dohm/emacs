@@ -6,20 +6,19 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-;; Set standard line wrapping behavior
-(global-visual-line-mode 1)
-
 ;; Store all backup and autosave files in the tmp dir
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(defun save-all-the-buffers ()
+  (save-some-buffers t))
+
 ;; Key mappings
 (global-set-key (kbd "s-n") 'make-frame-command)
 (global-set-key (kbd "s-s") 'save-buffer)
-(global-set-key (kbd "M-s-ß") 'save-some-buffers)
-(global-set-key [remap save-some-buffers] (lambda () (save-some-buffers t)))
+(global-set-key (kbd "M-s-ß") 'save-all-the-buffers)
 
 ;; make some use of the Super key
 (global-set-key (kbd "s-l") 'goto-line)
@@ -28,14 +27,14 @@
 (global-set-key (kbd "s-/") 'comment-or-uncomment-region)
 
 ;; Disable the bell when scrolling
-(defun my-bell-function ()
+(defun custom-bell-function ()
   (unless (memq this-command
         '(isearch-abort abort-recursive-edit exit-minibuffer
               keyboard-quit mwheel-scroll down up next-line previous-line
               backward-char forward-char))
     (ding)))
 
-(setq ring-bell-function 'my-bell-function)
+(setq ring-bell-function 'custom-bell-function)
 
 ;; Initial window size and position
 (add-to-list 'default-frame-alist '(height . 50))

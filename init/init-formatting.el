@@ -37,7 +37,11 @@
 (add-hook 'prog-mode-hook 'whitespace-prog-mode-hook)
 (add-hook 'yaml-mode-hook 'whitespace-prog-mode-hook)
 
+(electric-pair-mode 1)
 (electric-indent-mode 1)
+
+;; Set standard line wrapping behavior
+(global-visual-line-mode 1)
 
 ;; Make trailing whitespace visible and delete it before saving
 (setq-default show-trailing-whitespace t)
