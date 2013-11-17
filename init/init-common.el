@@ -15,6 +15,12 @@
 (defun save-all-the-buffers ()
   (save-some-buffers t))
 
+(defun kill-this-buffer-volatile ()
+  "Kill the current buffer without prompting if it is not modified."
+  (interactive)
+  (if (not (buffer-modified-p))
+      (kill-this-buffer)))
+
 ;; Key mappings
 (global-set-key (kbd "s-n") 'make-frame-command)
 (global-set-key (kbd "s-s") 'save-buffer)
@@ -23,10 +29,10 @@
 ;; make some use of the Super key
 (global-set-key (kbd "s-l") 'goto-line)
 (global-set-key (kbd "s-m") 'magit-status)
-(global-set-key (kbd "s-w") 'delete-frame)
+(global-set-key (kbd "s-w") 'kill-this-buffer-volatile)
 (global-set-key (kbd "s-/") 'comment-or-uncomment-region)
 
-;; Disable the bell when scrolling
+;; Disable the bell in annoying situations
 (defun custom-bell-function ()
   (unless (memq this-command
         '(isearch-abort abort-recursive-edit exit-minibuffer
