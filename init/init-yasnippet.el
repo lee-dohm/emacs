@@ -8,3 +8,5 @@
       '("~/.emacs.d/snippets"))
 
 (yas-global-mode 1)
+
+(add-to-list 'auto-mode-alist '("\\.emacs\\.d/snippets" . snippet-mode))
