@@ -2,16 +2,17 @@
 ;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
 ;;
 
-;; Add other ELPA repositories
+;; Package Repositories
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-;; Store all backup and autosave files in the tmp dir
+;; Store all backup and autosave files in the tmp directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; Custom buffer functions
 (defun save-all-the-buffers ()
   (save-some-buffers t))
 
@@ -21,6 +22,18 @@
   (if (not (buffer-modified-p))
       (kill-this-buffer)
     (kill-buffer (current-buffer))))
+
+(defun delete-file-and-buffer ()
+  "Kill the current buffer and deletes the file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (when filename
+      (if (vc-backend filename)
+          (vc-delete-file filename)
+        (progn
+          (delete-file filename)
+          (message "Deleted file %s" filename)
+          (kill-buffer))))))
 
 (defun rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
@@ -39,13 +52,16 @@
 (global-set-key (kbd "s-n") 'make-frame-command)
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "M-s-ß") 'save-all-the-buffers)
-(global-set-key (kbd "C-c r")  'rename-file-and-buffer)
+(global-set-key (kbd "C-c r") 'rename-file-and-buffer)
+(global-set-key (kbd "C-c D") 'delete-file-and-buffer)
 
 ;; make some use of the Super key
 (global-set-key (kbd "s-l") 'goto-line)
 (global-set-key (kbd "s-m") 'magit-status)
 (global-set-key (kbd "s-w") 'kill-this-buffer-volatile)
 (global-set-key (kbd "s-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") 'end-of-buffer)
 
 ;; Disable the bell in annoying situations
 (defun custom-bell-function ()
@@ -62,69 +78,24 @@
 (add-to-list 'default-frame-alist '(width . 132))
 
 ;; GUI Settings
+(setq frame-title-format '(:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name)) "%b")))
 (setq inhibit-startup-screen t)
 (tool-bar-mode 0)
+(blink-cursor-mode t)
 
 (if (not indicate-empty-lines)
-  (toggle-indicate-empty-lines))
+    (toggle-indicate-empty-lines))
+
+;; Smoother gesture scrolling
+(setq scroll-step           1
+      scroll-conservatively 10000)
 
 ;; Mode line
 (setq column-number-mode t)
-(setq size-indication-mode t)
 
-;; Editing
-(setq-default indent-tabs-mode nil)
-(setq require-final-newline t)
-
-;; Max column width highlight
-(require 'column-marker)
-
-;; Smart open line
-(defun smart-open-line ()
-  "Insert an empty line after the current line.
-   Position the cursor at its beginning, according to the current mode."
+(defun organization-name ()
+  "Retrieves the organization name to use for the project."
 
   (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
-(global-set-key [(shift return)] 'smart-open-line)
-
-(defun smart-open-line-above ()
-  "Insert an empty line above the current line.
-   Position the cursor at it's beginning, according to the current mode."
-
-  (interactive)
-  (move-beginning-of-line nil)
-  (newline-and-indent)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(global-set-key [(control shift return)] 'smart-open-line-above)
-
-(defun smarter-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
-
-Move point to the first non-whitespace character on this line.
-If point is already there, move to the beginning of the line.
-Effectively toggle between the first non-whitespace character and
-the beginning of the line.
-
-If ARG is not nil or 1, move forward ARG - 1 lines first.  If
-point reaches the beginning or end of the buffer, stop there."
-  (interactive "^p")
-  (setq arg (or arg 1))
-
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
-
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))
-
-;; remap C-a to `smarter-move-beginning-of-line'
-(global-set-key [remap move-beginning-of-line]
-                'smarter-move-beginning-of-line)
+  (or (if (boundp 'organization-name) organization-name) (getenv "ORGANIZATION") "Lifted Studios")
+  )

@@ -1,3 +1,7 @@
+;;
+;; Copyright (c) 2013 by Lee Dohm. All rights reserved.
+;;
+
 (defun byte-compile-init-dir ()
   "Byte-compile all your dotfiles."
   (interactive)

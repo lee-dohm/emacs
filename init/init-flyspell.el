@@ -6,7 +6,7 @@
 (setq ispell-program-name "/usr/local/bin/aspell")
 (setq ispell-list-command "list")
 
-;; Turns on spell checking in text mode
+;; Turns on spell checking in text mode except in log editing modes
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))

@@ -2,10 +2,15 @@
 ;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
 ;;
 
+(require 'column-marker)
 (require 'fill-column-indicator)
 (require 'whitespace)
-(setq whitespace-line-column 100)
+
+;; Max line length
 (setq-default fci-rule-column 100)
+(setq whitespace-line-column 100)
+
+;; Whitespace style
 (setq whitespace-style '(face tabs
                               spaces
                               trailing
@@ -30,25 +35,26 @@
 
 (defun whitespace-prog-mode-hook ()
   "Configures whitespace features for prog-mode and other related major modes."
-  (fci-mode)
   (enable-whitespace-mode)
-  (auto-fill-comments))
+  (fci-mode))
 
 (add-hook 'prog-mode-hook 'whitespace-prog-mode-hook)
 (add-hook 'yaml-mode-hook 'whitespace-prog-mode-hook)
 
-(electric-pair-mode 1)
 (electric-indent-mode 1)
 
-;; Set standard line wrapping behavior
-(global-visual-line-mode 1)
+;; Set line wrapping behavior for text files and other modes
+(defun enable-visual-line-mode-hook ()
+  (visual-line-mode 1))
 
-;; Make trailing whitespace visible and delete it before saving
-(setq-default show-trailing-whitespace t)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'text-mode-hook 'enable-visual-line-mode-hook)
+(add-hook 'grep-mode-hook 'enable-visual-line-mode-hook)
 
 ;; Key mapping for toggling whitespace-mode
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
-;; Convert tabs to spaces before saving any file
+;; Before saving files:
+;; * Convert tabs to spaces
+;; * Delete trailing whitespace
 (add-hook 'before-save-hook (lambda () (untabify (point-min) (point-max))))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
