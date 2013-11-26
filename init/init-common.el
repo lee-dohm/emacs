@@ -6,6 +6,8 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(require 'dired-x)
+
 ;; Store all backup and autosave files in the tmp directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
