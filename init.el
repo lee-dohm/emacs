@@ -22,6 +22,7 @@
 (load "init-shell.el")
 (load "init-smartparens.el")
 (load "init-theme.el")
+(load "init-xml.el")
 (load "init-yasnippet.el")
 
 (custom-set-variables

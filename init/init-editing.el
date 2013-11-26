@@ -52,5 +52,58 @@ point reaches the beginning or end of the buffer, stop there."
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
 
-;; remap C-a to `smarter-move-beginning-of-line'
+;; Custom buffer functions
+(defun save-all-the-buffers ()
+  (save-some-buffers t))
+
+(defun kill-this-buffer-volatile ()
+  "Kill the current buffer without prompting if it is not modified."
+  (interactive)
+  (if (not (buffer-modified-p))
+      (kill-this-buffer)
+    (kill-buffer (current-buffer))))
+
+(defun delete-file-and-buffer ()
+  "Kill the current buffer and deletes the file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (when filename
+      (if (vc-backend filename)
+          (vc-delete-file filename)
+        (progn
+          (delete-file filename)
+          (message "Deleted file %s" filename)
+          (kill-buffer))))))
+
+(defun rename-file-and-buffer ()
+  "Rename the current buffer and file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (message "Buffer is not visiting a file!")
+      (let ((new-name (read-file-name "New name: " filename)))
+        (cond
+         ((vc-backend filename) (vc-rename-file filename new-name))
+         (t
+          (rename-file filename new-name t)
+          (set-visited-file-name new-name t t)))))))
+
+;; Key mappings
+(global-set-key (kbd "s-n") 'make-frame-command)
+(global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "M-s-ß") 'save-all-the-buffers)
+(global-set-key (kbd "C-c r") 'rename-file-and-buffer)
+(global-set-key (kbd "C-c D") 'delete-file-and-buffer)
+
 (global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
+
+;; make some use of the Super key
+(global-set-key (kbd "s-l") 'goto-line)
+(global-set-key (kbd "s-m") 'magit-status)
+(global-set-key (kbd "s-w") 'kill-this-buffer-volatile)
+(global-set-key (kbd "s-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") 'end-of-buffer)
+(global-set-key (kbd "s-<right>") 'move-end-of-line)
+
+(global-set-key (kbd "s-<left>") 'smarter-move-beginning-of-line)
