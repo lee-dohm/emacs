@@ -54,6 +54,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Custom buffer functions
 (defun save-all-the-buffers ()
+  (interactive)
   (save-some-buffers t))
 
 (defun kill-this-buffer-volatile ()
