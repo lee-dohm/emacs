@@ -102,8 +102,12 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key (kbd "s-m") 'magit-status)
 (global-set-key (kbd "s-w") 'kill-this-buffer-volatile)
 (global-set-key (kbd "s-/") 'comment-or-uncomment-region)
+
+;; Standard navigation using arrows
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
 (global-set-key (kbd "s-<right>") 'move-end-of-line)
-
 (global-set-key (kbd "s-<left>") 'smarter-move-beginning-of-line)
+
+(global-set-key (kbd "M-s-<left>") 'ns-prev-frame)
+(global-set-key (kbd "M-s-<right>") 'ns-next-frame)
