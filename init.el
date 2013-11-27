@@ -5,6 +5,7 @@
 ;; Load paths
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/lib")
+(add-to-list 'load-path "~/Source/rspec-mode")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Load settings common to all modes
@@ -18,6 +19,7 @@
 (load "init-formatting.el")
 (load "init-prog-mode.el")
 (load "init-projectile.el")
+(load "init-rspec.el")
 (load "init-ruby.el")
 (load "init-shell.el")
 (load "init-smartparens.el")
