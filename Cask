@@ -1,5 +1,5 @@
-(source "gnu" "http://elpa.gnu.org/packages/")
-(source "melpa" "http://melpa.milkbox.net/packages/")
+(source gnu)
+(source melpa)
 
 (depends-on "ag")
 (depends-on "auto-complete")
@@ -15,6 +15,7 @@
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
+(depends-on "sass-mode")
 (depends-on "smartparens")
 (depends-on "yaml-mode")
 (depends-on "yard-mode")

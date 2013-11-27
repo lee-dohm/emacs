@@ -22,6 +22,7 @@
 (load "init-projectile.el")
 (load "init-rspec.el")
 (load "init-ruby.el")
+(load "init-sass.el")
 (load "init-shell.el")
 (load "init-smartparens.el")
 (load "init-theme.el")
