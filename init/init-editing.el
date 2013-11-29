@@ -4,7 +4,7 @@
 
 (delete-selection-mode t)
 (setq-default indent-tabs-mode nil)
-(setq require-final-newline t)
+(setq-default require-final-newline t)
 
 (defun smart-open-line ()
   "Insert an empty line after the current line.

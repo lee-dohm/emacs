@@ -13,6 +13,7 @@
 
 ;; Load settings specific to certain modes or features
 (load "init-compile.el")
+(load "init-coffeescript.el")
 (load "init-editing.el")
 (load "init-emacs-lisp.el")
 (load "init-flyspell.el")

@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
 # name: describe Class do ... end
+# key: des
 # expand-env: ((top-level (rspec-top-level-desc-p)) (maybe-quote (unless top-level "'")))
 # --
 describe `maybe-quote`${1:`(and top-level (rspec-class-from-file-name))`}`maybe-quote` do

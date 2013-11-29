@@ -1,6 +1,7 @@
+# -*- mode: snippet -*-
 # name: Insert Copyright
-# author: Lee Dohm <lee@liftedstudios.com>
 # key: copy
 # --
-Copyright (c) ${1:`(nth 5 (decode-time))`} by ${2:`(organization-name)`}. All rights reserved.
-`(let ((comment-style 'extra-line)) (comment-region (point-min) (point-at-eol 0)))`
+
+Copyright (c) ${1:`(nth 5 (decode-time))`} by ${2:`(organization-name)`}. All Rights Reserved.
+`(comment-region (point-min) (point-at-eol 0))`

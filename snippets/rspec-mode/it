@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: it 'description' do ... end
+# key: it
+# --
+it '$1' do
+  $0
+end
