@@ -103,6 +103,7 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key (kbd "s-m") 'magit-status)
 (global-set-key (kbd "s-w") 'kill-this-buffer-volatile)
 (global-set-key (kbd "s-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "s-o") 'find-file)
 
 ;; Standard navigation using arrows
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
