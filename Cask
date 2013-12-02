@@ -15,6 +15,7 @@
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
+(depends-on "rspec-mode")
 (depends-on "sass-mode")
 (depends-on "smartparens")
 (depends-on "yaml-mode")
