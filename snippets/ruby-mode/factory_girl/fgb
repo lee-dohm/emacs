@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: FactoryGirl.build
+# key: fgb
+# --
+FactoryGirl.build($0)
