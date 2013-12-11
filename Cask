@@ -3,6 +3,7 @@
 
 (depends-on "ag")
 (depends-on "auto-complete")
+(depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "column-marker")
 (depends-on "fill-column-indicator")
