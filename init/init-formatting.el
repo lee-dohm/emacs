@@ -18,7 +18,6 @@
                               space-before-tab
                               newline
                               indentation
-                              empty
                               space-after-tab
                               space-mark
                               tab-mark))
