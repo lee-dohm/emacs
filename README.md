@@ -1,6 +1,6 @@
 # Lee's Emacs environment
 
-This is my Emacs environment, such as it is. It was originally based off of [Setting up Emacs as Ruby development environment on OS X](http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-environment-on-osx/) but I've since added a number of tweaks and configurations that I've picked up from a lot of other places.
+This is my Emacs environment, such as it is. It was originally based off of [Setting up Emacs as Ruby development environment on OS X](http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-environment-on-osx/) but I've since added a number of tweaks and configurations that I've picked up from a lot of other places. Most recently [Avdi Grimm's Emacs configuration](https://github.com/avdi/.emacs24.d/) helped me simplify a number of things.
 
 ## Installation of Emacs
 
