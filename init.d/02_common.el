@@ -3,7 +3,9 @@
 (add-to-list 'default-frame-alist '(width . 132))
 
 ;; GUI Settings
-(setq frame-title-format '(:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name)) "%b")))
+(setq frame-title-format
+      '(:eval (if (buffer-file-name)
+                  (abbreviate-file-name (buffer-file-name)) "%b")))
 (setq inhibit-startup-screen t)
 (tool-bar-mode 0)
 (blink-cursor-mode)
