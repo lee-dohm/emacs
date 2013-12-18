@@ -15,7 +15,7 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "pallet")
-(depends-on "projectile" "0.10.0")
+(depends-on "projectile")
 (depends-on "rainbow-mode")
 (depends-on "rspec-mode")
 (depends-on "sass-mode")
