@@ -1,5 +1,6 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
+(require 'pallet)
 
 (require 'package)
 (add-to-list 'package-archives
