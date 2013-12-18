@@ -1,52 +1,19 @@
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-(require 'pallet)
+;; Configuration directories and file names
+(setq lcd-emacs-init-file (or load-file-name buffer-file-name))
+(setq lcd-emacs-config-dir
+      (file-name-directory lcd-emacs-init-file))
+(setq user-emacs-directory lcd-emacs-config-dir)
+(setq lcd-elisp-dir
+      (expand-file-name "elisp" lcd-emacs-config-dir))
+(setq lcd-init-dir
+      (expand-file-name "init.d" lcd-emacs-config-dir))
 
-;; Load paths
-(add-to-list 'load-path "~/.emacs.d/init")
-(add-to-list 'load-path "~/.emacs.d/lib")
-(add-to-list 'load-path "~/Source/rspec-mode")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; Load all initialization scripts
+(if (file-exists-p lcd-init-dir)
+    (dolist (file (directory-files lcd-init-dir t "\\.el$"))
+      (load file)))
 
-;; Load settings common to all modes
-(load "init-common.el")
-
-;; Load settings specific to certain modes or features
-(load "init-compile.el")
-(load "init-coffeescript.el")
-(load "init-editing.el")
-(load "init-emacs-lisp.el")
-(load "init-flyspell.el")
-(load "init-formatting.el")
-(load "init-prog-mode.el")
-(load "init-projectile.el")
-(load "init-rspec.el")
-(load "init-ruby.el")
-(load "init-sass.el")
-(load "init-shell.el")
-(load "init-smartparens.el")
-(load "init-theme.el")
-(load "init-xml.el")
-(load "init-yasnippet.el")
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("a2c537c981b4419aa3decac8e565868217fc2995b74e1685c5ff8c6d77b198d6" "74cd303a4ca507246556c8c78a5fe33457dc4c1b0758d25b2c82cab3c594d56a" "0911e29dc907e3774f89cb9b13e3abd03ae861b130e855e3ae0bf9d1c7eed852" "31bfef452bee11d19df790b82dea35a3b275142032e06c6ecdc98007bf12466c" default)))
- '(safe-local-variable-values
-   (quote
-    ((organization-name . "Lifted Studios")
-     (organization-name . "Amazon.com Inc., and its affiliates")
-     (encoding . utf-8)
-     (organization-name . "Lee Dohm")))))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; Set up "custom" system
+(setq custom-file
+      (expand-file-name "emacs-customizations.el" lcd-emacs-config-dir))
+(load custom-file)

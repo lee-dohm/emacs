@@ -1,6 +1,5 @@
-;;
-;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
-;;
+(add-to-list 'custom-theme-load-path
+             (expand-file-name "themes" lcd-emacs-config-dir))
 
 (load-theme 'railscasts t)
 

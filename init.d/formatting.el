@@ -26,12 +26,6 @@
   "Turns on whitespace mode."
   (whitespace-mode 1))
 
-(defun auto-fill-comments ()
-  "Auto-fills comments only."
-  (setq fill-column 72)
-  (set (make-local-variable 'comment-auto-fill-only-comments) t)
-  (auto-fill-mode t))
-
 (defun whitespace-prog-mode-hook ()
   "Configures whitespace features for prog-mode and other related major modes."
   (enable-whitespace-mode)
@@ -40,6 +34,7 @@
 (add-hook 'prog-mode-hook 'whitespace-prog-mode-hook)
 (add-hook 'yaml-mode-hook 'whitespace-prog-mode-hook)
 
+;; Enable automatic reindenting
 (electric-indent-mode 1)
 
 ;; Set line wrapping behavior for text files and other modes
@@ -55,5 +50,7 @@
 ;; Before saving files:
 ;; * Convert tabs to spaces
 ;; * Delete trailing whitespace
+;; * Require final newline
 (add-hook 'before-save-hook (lambda () (untabify (point-min) (point-max))))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default require-final-newline t)

@@ -1,10 +1,8 @@
-;;
-;; Copyright (c) 2013 by Lee Dohm. All rights reserved.
-;;
-
+;; Allows typing to replace selection
 (delete-selection-mode t)
+
+;; nil prevents indentation from inserting tabs
 (setq-default indent-tabs-mode nil)
-(setq-default require-final-newline t)
 
 (defun smart-open-line ()
   "Insert an empty line after the current line.

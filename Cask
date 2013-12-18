@@ -1,5 +1,6 @@
-(source gnu)
+(source marmalade)
 (source melpa)
+(source gnu)
 
 (depends-on "ag")
 (depends-on "auto-complete")
@@ -14,7 +15,7 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "pallet")
-(depends-on "projectile")
+(depends-on "projectile" "0.10.0")
 (depends-on "rainbow-mode")
 (depends-on "rspec-mode")
 (depends-on "sass-mode")
@@ -22,4 +23,3 @@
 (depends-on "yaml-mode")
 (depends-on "yard-mode")
 (depends-on "yasnippet")
-(depends-on "zenburn-theme")

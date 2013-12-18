@@ -1,7 +1,3 @@
-;;
-;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
-;;
-
 ;; Configure spell checking to use aspell
 (setq ispell-program-name "/usr/local/bin/aspell")
 (setq ispell-list-command "list")
