@@ -1,7 +1,3 @@
-;;
-;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
-;;
-
 (require 'column-marker)
 (require 'fill-column-indicator)
 (require 'whitespace)
