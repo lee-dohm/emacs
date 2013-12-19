@@ -11,6 +11,7 @@ This is my Emacs environment, such as it is. It was originally based off of [Set
 
 1. `brew install the_silver_searcher`
 1. `brew install aspell --with-lang-en`
+1. `brew install multimarkdown`
 
 ## Copyright
 
