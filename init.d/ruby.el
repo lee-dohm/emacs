@@ -1,3 +1,6 @@
+(require 'rbenv)
+(global-rbenv-mode)
+
 (add-hook 'ruby-mode-hook 'yard-mode)
 (add-hook 'ruby-mode-hook (lambda () (interactive) (column-marker-1 100)))
 
