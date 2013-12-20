@@ -14,11 +14,11 @@
     (toggle-indicate-empty-lines))
 
 ;; Mode line
+(setq line-number-mode t)
 (setq column-number-mode t)
 
 (defun organization-name ()
-  "Retrieves the organization name to use for the project."
+  "Retrieves the organization name to use for things like copyright notices."
 
   (interactive)
-  (or (if (boundp 'organization-name) organization-name) (getenv "ORGANIZATION") "Lifted Studios")
-  )
+  (or (if (boundp 'organization-name) organization-name) (getenv "ORGANIZATION") "Lifted Studios"))
