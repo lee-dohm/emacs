@@ -1,8 +1,5 @@
-;;
-;; Copyright (c) 2013 by Lee Dohm. All Rights Reserved.
-;;
-
 (require 'grizzl)
+(require 'projectile)
 (projectile-global-mode)
 (setq projectile-completion-system 'grizzl)
 

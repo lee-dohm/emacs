@@ -1,3 +1,5 @@
+(require 'shell-script-mode)
+
 ;; Required by some utilities because fish shell doesn't play well with Emacs
 (setq-default explicit-shell-file-name "/bin/bash")
 (setq-default shell-file-name "/bin/bash")

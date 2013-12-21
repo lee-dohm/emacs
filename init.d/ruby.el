@@ -1,4 +1,8 @@
 (require 'rbenv)
+(require 'rspec-mode)
+(require 'ruby-mode)
+(require 'yard-mode)
+
 (global-rbenv-mode)
 
 (add-hook 'ruby-mode-hook 'yard-mode)
