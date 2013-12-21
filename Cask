@@ -8,6 +8,7 @@
 (depends-on "coffee-mode")
 (depends-on "column-marker")
 (depends-on "fill-column-indicator")
+(depends-on "flx-ido")
 (depends-on "git-commit-mode")
 (depends-on "grizzl")
 (depends-on "haml-mode")
