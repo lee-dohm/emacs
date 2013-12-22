@@ -27,5 +27,5 @@
 (global-set-key (kbd "M-s-<right>") 'ns-next-frame)
 
 ;; Map the open line functions to the normal keys
-(global-set-key (kbd "S-<ret>") 'lcd-open-line)
-(global-set-key (kbd "C-S-<ret>") 'lcd-open-line-above)
+(global-set-key [S-return] 'lcd-open-line)
+(global-set-key [C-S-return] 'lcd-open-line-above)
