@@ -21,6 +21,7 @@
 (depends-on "rbenv")
 (depends-on "rspec-mode")
 (depends-on "sass-mode")
+(depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "yaml-mode")
 (depends-on "yard-mode")
