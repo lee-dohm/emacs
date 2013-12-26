@@ -1,8 +1,11 @@
 (require 'lcd-frame-title)
 
 ;; Initial window size and position
-(add-to-list 'default-frame-alist '(height . 50))
-(add-to-list 'default-frame-alist '(width . 132))
+(setq default-frame-alist
+      '((height . 50)
+        (width . 132)
+        (left . 735)
+        (top . 0)))
 
 ;; GUI Settings
 (setq frame-title-format '(:eval (or (lcd-frame-title) "%b")))
