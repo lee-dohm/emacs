@@ -24,6 +24,9 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Automatically update copyright notices on files that are saved
+(add-hook 'before-save-hook 'copyright-update)
+
 (defun organization-name ()
   "Retrieves the organization name to use for things like copyright notices."
 
