@@ -13,6 +13,7 @@
 (depends-on "grizzl")
 (depends-on "haml-mode")
 (depends-on "less-css-mode")
+(depends-on "lorem-ipsum")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "pallet")
