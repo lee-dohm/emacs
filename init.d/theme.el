@@ -1,5 +1,5 @@
 (add-to-list 'custom-theme-load-path
-             (expand-file-name "themes" lcd-emacs-config-dir))
+             (expand-file-name "themes" user-emacs-directory))
 
 (load-theme 'railscasts t)
 
