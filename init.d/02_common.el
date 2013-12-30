@@ -16,11 +16,9 @@
 ;; Turn off the tool bar
 (tool-bar-mode 0)
 
-;; Make the cursor blink
+;; Make the cursor blink forever
 (blink-cursor-mode)
-
-(if (not indicate-empty-lines)
-    (toggle-indicate-empty-lines))
+(setq blink-cursor-blinks 0)
 
 ;; Mode line
 (setq line-number-mode t)
