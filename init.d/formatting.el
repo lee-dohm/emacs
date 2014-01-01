@@ -18,13 +18,9 @@
                               space-mark
                               tab-mark))
 
-(defun enable-whitespace-mode ()
-  "Turns on whitespace mode."
-  (whitespace-mode 1))
-
 (defun whitespace-prog-mode-hook ()
   "Configures whitespace features for prog-mode and other related major modes."
-  (enable-whitespace-mode)
+  (whitespace-mode 1)
   (fci-mode))
 
 (add-hook 'prog-mode-hook 'whitespace-prog-mode-hook)
