@@ -34,10 +34,6 @@
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 (setq scroll-conservatively 10000)
 
-;; Automatically update copyright notices on files that are saved
-(setq copyright-query 'function)
-(add-hook 'before-save-hook 'copyright-update)
-
 (defun organization-name ()
   "Retrieves the organization name to use for things like copyright notices."
 

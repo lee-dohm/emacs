@@ -6,3 +6,7 @@
                 (when (and (not (file-exists-p dir))
                            (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
                   (make-directory dir t))))))
+
+;; Automatically update copyright notices on files that are saved, prompting first
+(setq copyright-query 'function)
+(add-hook 'before-save-hook 'copyright-update)
