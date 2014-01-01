@@ -24,7 +24,15 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; scroll one line at a time (less "jumpy" than defaults)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq scroll-conservatively 10000)
+
 ;; Automatically update copyright notices on files that are saved
+(setq copyright-query 'function)
 (add-hook 'before-save-hook 'copyright-update)
 
 (defun organization-name ()
