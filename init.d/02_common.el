@@ -1,5 +1,8 @@
 (require 'lcd-frame-title)
 
+;; Set sRGB color space
+(setq ns-use-srgb-colorspace t)
+
 ;; Initial window size and position
 (setq default-frame-alist
       '((height . 50)
