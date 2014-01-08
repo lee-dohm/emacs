@@ -1,3 +1,4 @@
+(require 'mouse)
 (require 'lcd-frame-title)
 
 ;; Set sRGB color space
@@ -10,7 +11,7 @@
         (left . 735)
         (top . 0)))
 
-;; GUI Settings
+;; Frame title
 (setq frame-title-format '(:eval (or (lcd-frame-title) "%b")))
 
 ;; Turn off the splash screen
@@ -22,6 +23,11 @@
 ;; Make the cursor blink forever
 (blink-cursor-mode)
 (setq blink-cursor-blinks 0)
+
+;; Mouse support
+(xterm-mouse-mode t)
+(defun track-mouse (e))
+(setq mouse-sel-mode t)
 
 ;; Mode line
 (setq line-number-mode t)
