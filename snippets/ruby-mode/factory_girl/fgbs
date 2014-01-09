@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: FactoryGirl.build_stubbed
+# key: fgbs
+# --
+FactoryGirl.build_stubbed($0)
