@@ -1,3 +1,6 @@
 (require 'linum)
 
-(add-hook 'prog-mode-hook 'linum-mode)
+(defun custom-prog-mode ()
+  (linum-mode))
+
+(add-hook 'prog-mode-hook 'custom-prog-mode)
