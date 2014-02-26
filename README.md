@@ -15,4 +15,4 @@ This is my Emacs environment, such as it is. It was originally based off of [Set
 
 ## Copyright
 
-Copyright &copy; 2013 [Lee Dohm](http://www.lee-dohm.com), [Lifted Studios](http://www.liftedstudios.com). See [LICENSE](LICENSE.md) for details.
+Copyright &copy; 2013-2014 [Lee Dohm](http://www.lee-dohm.com), [Lifted Studios](http://www.liftedstudios.com). See [LICENSE](LICENSE.md) for details.
