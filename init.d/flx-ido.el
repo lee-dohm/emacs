@@ -1,6 +1,10 @@
 (require 'flx-ido)
+(require 'ido-vertical-mode)
+
 (ido-mode t)
+(ido-vertical-mode 1)
 (ido-everywhere 1)
+
 (flx-ido-mode 1)
 (setq ido-auto-merge-work-directories-length -1)
 

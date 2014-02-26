@@ -12,6 +12,7 @@
 (depends-on "git-commit-mode")
 (depends-on "grizzl")
 (depends-on "haml-mode")
+(depends-on "ido-vertical-mode")
 (depends-on "less-css-mode")
 (depends-on "lorem-ipsum")
 (depends-on "magit")
